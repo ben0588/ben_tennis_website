@@ -67,9 +67,12 @@ class MiddleContent extends Component {
                 
                 <div className='row d-flex justify-content-center container m-auto '>
 
-                {this.state.commodity.map((e,index)=>{return <BuyCard onClick={this.addShoppingCartCount} id={e.id} key={index} value={e.value} number={e.originalPrice} discount={e.discount} src={e.src} />  })}
+                {this.state.commodity.map((e,index)=>{
+                    return <BuyCard onClick={this.addShoppingCartCount} 
+                    id={e.id} key={index} value={e.value} number={e.originalPrice} 
+                    discount={e.discount} src={e.src} />  })}
     
-
+                
        
                 </div>
                 </div>
