@@ -71,7 +71,6 @@ class MiddleContent extends Component {
                     return <BuyCard onClick={this.addShoppingCartCount} 
                     id={e.id} key={index} value={e.value} number={e.originalPrice} 
                     discount={e.discount} src={e.src} />  })}
-    123
                 
        
                 </div>
