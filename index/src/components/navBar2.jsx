@@ -65,7 +65,6 @@ class Navigation extends Component {
            </form>
            </div>
            </nav>
-                123
            </div>
       </div>
         );

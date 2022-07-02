@@ -4,6 +4,7 @@ import LeftNavButton from './LeftNavButton.js'
 import BuyCard from './buyCard.js';
 import 'bootstrap/dist/css/bootstrap.css'
 import topImg1 from '../image/brandedGoods/1234567.png'
+import Axios from 'axios'
 
 class MiddleContent extends Component {
     constructor(props){
@@ -24,8 +25,8 @@ class MiddleContent extends Component {
                 {id:2,value:"ULTRA 100-V3 NAKED",originalPrice:1400,discount:0.6,src:'http://www.wilson.com/en-us/media/catalog/product/e/0/e0670cdf-017d-42ce-a403-370e8a5e1d58_ike01xunvjleoyid.png?dpr=4&fit=bounds&orient=1&quality=90&optimize=high&format=jpg&auto=webp&enable=upscale&width=1198&height=961&canvas=4792%2C3844&bg-color=f5f5f5'},
                 {id:3,value:"SPEED TEAM 2022",originalPrice:1200,discount:0.6,src:'http://headsports.com.tw/ezfiles/813/1813/plugin/ec/pictures/163/m/mczh-tw1000x1000_large99645.jpg'},
                 {id:4,value:"Dunlop CX-200 2021",originalPrice:1900,discount:0.5,src:'http://nanda.menet.com.tw/images/product_images/xl/7214964462.jpg'},
-                {id:4,value:"Dunlop CX-200 2021",originalPrice:1900,discount:0.5,src:'http://nanda.menet.com.tw/images/product_images/xl/7214964462.jpg'},
-                {id:4,value:"Dunlop CX-200 2021",originalPrice:1900,discount:0.5,src:'http://nanda.menet.com.tw/images/product_images/xl/7214964462.jpg'},
+                {id:5,value:"Dunlop CX-200 2021",originalPrice:1900,discount:0.5,src:'http://nanda.menet.com.tw/images/product_images/xl/7214964462.jpg'},
+                {id:6,value:"Dunlop CX-200 2021",originalPrice:1900,discount:0.5,src:'http://nanda.menet.com.tw/images/product_images/xl/7214964462.jpg'},
                 
             ],
             allListBigName:[
@@ -42,10 +43,11 @@ class MiddleContent extends Component {
         }
     }
 
-    addShoppingCartCount = ()=>{
-        console.log("ok")
-        console.log(this.state.commodity)
+    addShoppingCartCount =()=>{
 
+
+        // localStorage.setItem("Test",JSON.stringify(this.state.commodity));
+        localStorage.setItem("Test",JSON.stringify(this.state.commodity));
     }
 
     // {this.state.commodity.map((e,index)=>{return <BuyCard id={e.id} key={index} />})}
@@ -53,6 +55,7 @@ class MiddleContent extends Component {
     render() {
         return (
             <>  
+            {/* 最上層廣告橫幅 */}
             <div style={this.state.topStyle}  >
                 <img style={{maxWidth:'100%',height:'auto'}} className='' src={topImg1}/>
             </div>
@@ -60,17 +63,19 @@ class MiddleContent extends Component {
             <div style={this.state.frameStyle} >
             <div className='col1 ml-2 justify-content-center' style={{}} >
                     <br/>
+                {/* 左側下拉式選單 */}
                 {this.state.allListBigName.map((e,index)=>{return <LeftNavButton id={e.id} key={index} value={e.value}/>  })}
                 
             </div>
                 <div className='col-10' style={this.state.rightStyle}>
                 
                 <div className='row d-flex justify-content-center container m-auto '>
-
+                {/* 每個商品卡片 */}
                 {this.state.commodity.map((e,index)=>{
                     return <BuyCard onClick={this.addShoppingCartCount} 
                     id={e.id} key={index} value={e.value} number={e.originalPrice} 
                     discount={e.discount} src={e.src} />  })}
+                
                 
        
                 </div>

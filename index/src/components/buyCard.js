@@ -4,6 +4,9 @@ import 'bootstrap/dist/css/bootstrap.css'
 import './buyCard.css'
 import ShoppingCart from './navComponents/shoppingCart.jsx'
 import { NavLink } from 'react-router-dom';
+import Axios from 'axios';
+
+
 
 class BuyCard extends Component {
     constructor(props){
@@ -45,7 +48,13 @@ class BuyCard extends Component {
             },
             imgTest:{
                 src:'https://dummyimage.com/200x200/00bebe/fff'
-            }
+            },
+            // commodity :{
+            //     commodityID : this.props.id,
+            //     commodityValue : this.props.value,
+            //     commoditySrc : this.props.src,
+            // }
+            
 
         }
     }
@@ -56,26 +65,51 @@ class BuyCard extends Component {
         });
     }
 
+    // test =()=>{
+    //     // return <NavLink to="/shoppingCart"></NavLink>
+    //     console.log("OK")
+
+    // }
+
+    test = (e)=>{
+        var commodity ={
+            commodityID : this.props.id,
+            commodityValue : this.props.value,
+            commoditySrc : this.props.src,
+
+        };
+        // localStorage.setItem('commodity',this.props.id,this.props.value,this.props.src);
+        // localStorage.setItem(this.state.commodity.commodityID,this.props.value);
+        localStorage.key(this.props.date)
+        localStorage.setItem(this.props.id,this.props.value);
+    }
+    
+
     render() { 
         return (
             <>
             <div style={this.state.frameStyle} className="container col-3">
 
-               <div className="shadow" style={{backgroundColor:'#C9E265',height:'75%',width:'200px'}}>
+                <div className="shadow" style={{backgroundColor:'#C9E265',height:'75%',width:'200px'}}>
 
-               <img className="buyCardImg "src={this.props.src}
-               style={this.state.imgStyle}/>
-               <h5 style={this.state.textStyle} className="mt-3 font-weight-bolder ">{this.props.value}</h5>
-               <div className='mt-3'>
-               <span style={this.state.textStyle} className="text-muted">商品原價: $<s>{this.props.number}</s></span>
+                {/* 設定商品圖片 */}
+                <img className="buyCardImg "src={this.props.src}
+                style={this.state.imgStyle}/>
+                {/* 設定商品名稱 */}
+                <h5 style={this.state.textStyle} className="mt-3 font-weight-bolder ">{this.props.value}{this.props.id}</h5>
+                <div className='mt-3'>
+                {/* 設定商品原價 */}
+                <span style={this.state.textStyle} className="text-muted">商品原價: $<s>{this.props.number}</s></span>
+                {/* 設定商品售價 */}
                 <span style={this.state.textStyle}>商品售價: ${Math.floor(this.props.number * this.props.discount)}</span>
                 <div style={this.state.twoBtnStyle} className="mt-3">
                 <button  onClick={this.handleClick}
-                    className='btn '><svg xmlns="http://www.w3.org/2000/svg" style={this.state.flag === 1 ? this.state={color:"red"} : {color:"black"}} 
-                    width="16" height="16" fill="currentColor" className="bi mr-4" viewBox="0 0 16 16">
+                className='btn '><svg xmlns="http://www.w3.org/2000/svg" style={this.state.flag === 1 ? this.state={color:"red"} : {color:"black"}} 
+                width="16" height="16" fill="currentColor" className="bi mr-4" viewBox="0 0 16 16">
                 <path fillRule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
                 </svg></button>
-                <button className='btn btn-outline-dark shadow' onClick={this.props.onClick}>加入購物車</button>
+                {/* <button className='btn btn-outline-dark shadow' onClick={this.test}><NavLink to="/shoppingCart">加入購物車</NavLink></button> */}
+                <button className='btn btn-outline-dark shadow' onClick={this.props.onClick}><NavLink to="/shoppingCart">加入購物車</NavLink></button>
                 </div>
                 </div>
                 </div>
