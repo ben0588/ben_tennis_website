@@ -6,7 +6,7 @@ import BuyCard from '../buyCard.js'
 // import $, { data } from 'jquery';
 
 import 'bootstrap/dist/css/bootstrap.css';
-import '../testComponents/shoppingTest.js'
+// import '../testComponents/shoppingTest.js'
 
 class ShoppingCart extends Component {
     constructor(props){
@@ -27,13 +27,13 @@ class ShoppingCart extends Component {
      } 
 
 
-     addProductToCart= () =>{
-        localStorage.setItem('id', location.state.id);
-        localStorage.setItem('value', location.state.value);
-        localStorage.setItem('originalPrice', location.state.originalPrice);
-        localStorage.setItem('discount', location.state.discount);
-        localStorage.setItem('src', location.state.src);
-    }
+    //  addProductToCart= () =>{
+    //     localStorage.setItem('id', location.state.id);
+    //     localStorage.setItem('value', location.state.value);
+    //     localStorage.setItem('originalPrice', location.state.originalPrice);
+    //     localStorage.setItem('discount', location.state.discount);
+    //     localStorage.setItem('src', location.state.src);
+    // }
 
     //  componentDidMount(){
     //     var a = localStorage.getItem("Test");

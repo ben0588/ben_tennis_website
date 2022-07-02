@@ -14,7 +14,7 @@ import brandSort from './navComponents/brandSort.jsx'
 import tennisRacket from './navComponents/tennisRacket.jsx'
 import accessories from './navComponents/Accessories.jsx'   
 // 關於我
-import contactUs from './navComponents/contactUs.jsx'
+import ContactUs from './navComponents/contactUs.jsx'
 
 
 import login from './navComponents/login.jsx';
@@ -29,9 +29,8 @@ class NavBar extends Component {
             "margin":"-1% 20% 0px 30%",
             
         },
-        count:0
+        count:0,
      } 
-
 
     render() { 
         return (
@@ -47,13 +46,16 @@ class NavBar extends Component {
                     <Route path="/brandSort" component={brandSort} exact/>
                     <Route path="/tennisRacket" component={tennisRacket} exact/>
                     <Route path="/accessories" component={accessories} exact/>
-                    <Route path="/contactUs" component={contactUs} exact/>
+
+
+                    <Route path="/contactUs" component={ContactUs} exact />
 
                     <Route path="/login" component={login} exact/>
                     <Route path="/register" component={register} exact/>
                     <Route path={`/shoppingCart/${this.props.id}`} component={shoppingCart}/>
                  </Switch>
 
+        
                  
                  </div>
             </HashRouter>

@@ -5,6 +5,9 @@ class ContactUs extends Component {
     render() { 
         return (
             <>
+            <button className='square'>
+            {this.props.value}
+            </button>
             聯絡我們測試中
             <BottomValue/>
             </>
