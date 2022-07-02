@@ -54,6 +54,7 @@ class BuyCard extends Component {
             //     commodityValue : this.props.value,
             //     commoditySrc : this.props.src,
             // }
+            id:this.props.id,
             
 
         }
@@ -109,7 +110,13 @@ class BuyCard extends Component {
                 <path fillRule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
                 </svg></button>
                 {/* <button className='btn btn-outline-dark shadow' onClick={this.test}><NavLink to="/shoppingCart">加入購物車</NavLink></button> */}
-                <button className='btn btn-outline-dark shadow' onClick={this.props.onClick}><NavLink to="/shoppingCart">加入購物車</NavLink></button>
+                <button className='btn btn-outline-dark shadow'
+                 onClick={this.props.onClick}>
+                    {/* <NavLink to={`/shoppingCart/${this.state.id}`}>  */}
+                    加入購物車
+                    {/* </NavLink> */}
+                </button>
+
                 </div>
                 </div>
                 </div>

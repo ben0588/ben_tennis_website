@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
 import LeftNavButton from './LeftNavButton.js'
 import BuyCard from './buyCard.js';
 import 'bootstrap/dist/css/bootstrap.css'
@@ -44,13 +44,16 @@ class MiddleContent extends Component {
     }
 
     addShoppingCartCount =()=>{
-
-
-        // localStorage.setItem("Test",JSON.stringify(this.state.commodity));
         localStorage.setItem("Test",JSON.stringify(this.state.commodity));
+        // localStorage.setItem("Test",JSON.stringify(this.state.commodity));
+        // localStorage.setItem("Test",this.state.commodity);
     }
 
-    // {this.state.commodity.map((e,index)=>{return <BuyCard id={e.id} key={index} />})}
+    // addShoppingCartCount= (e)=>{
+    //     var a = localStorage.setItem(this.props.id,this.props.value);
+    //     // this.setState({a});
+    //     console.log(a);
+    // }
 
     render() {
         return (
@@ -71,10 +74,18 @@ class MiddleContent extends Component {
                 
                 <div className='row d-flex justify-content-center container m-auto '>
                 {/* 每個商品卡片 */}
+
+                
                 {this.state.commodity.map((e,index)=>{
-                    return <BuyCard onClick={this.addShoppingCartCount} 
+                    return <Link to={`/shoppingCart/${e.id}`}> <BuyCard 
+                    onClick={this.addShoppingCartCount} 
                     id={e.id} key={index} value={e.value} number={e.originalPrice} 
-                    discount={e.discount} src={e.src} />  })}
+                    discount={e.discount} src={e.src} 
+                    
+                    /> 
+                    </Link>
+                    })}
+                
                 
                 
        

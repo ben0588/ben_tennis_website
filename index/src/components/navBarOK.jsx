@@ -51,7 +51,7 @@ class NavBar extends Component {
 
                     <Route path="/login" component={login} exact/>
                     <Route path="/register" component={register} exact/>
-                    <Route path="/shoppingCart" component={shoppingCart} exact/>
+                    <Route path={`/shoppingCart/${this.props.id}`} component={shoppingCart}/>
                  </Switch>
 
                  
