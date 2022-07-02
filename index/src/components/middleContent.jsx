@@ -79,9 +79,14 @@ class MiddleContent extends Component {
                 {this.state.commodity.map((e,index)=>{
                     return <Link to={`/shoppingCart/${e.id}`}> <BuyCard 
                     onClick={this.addShoppingCartCount} 
-                    id={e.id} key={index} value={e.value} number={e.originalPrice} 
-                    discount={e.discount} src={e.src} 
-                    
+
+                    // id(=前面的名稱是自訂義名稱,要給基元件BuyCard設定this.props.id)取值用的
+                    id={e.id} 
+                    key={index} 
+                    value={e.value}
+                    number={e.originalPrice} 
+                    discount={e.discount} 
+                    src={e.src} 
                     /> 
                     </Link>
                     })}
