@@ -1,87 +1,78 @@
-import React, { Component } from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import BuyCard from '../buyCard.js'
-// // import MiddleContent from "../middleContent.jsx";
-// // import LocalStorageTest from "../testComponents/localStorage"
-// import $, { data } from 'jquery';
+// import React from 'react';
 
-import 'bootstrap/dist/css/bootstrap.css';
-// import '../testComponents/shoppingTest.js'
+// function ShoppingCart(props) {
+//     return ( 
+//         <>
+//         <div>{props.name}</div>
+//         <div>1232132123131231</div>
+//         <div>1232132123131231</div>
+//         </>
+//      );
+// }
+
+// export default ShoppingCart;
+
+
+import React, { Component } from 'react';
 
 class ShoppingCart extends Component {
-    constructor(props){
-        super(props)
-    }
-    state = { 
-        commodityValue:[
-            localStorage.getItem("Test")
-        ],
-        commodityValueV2:[
-            // JSON.parse(localStorage.getItem("Test"))
-        ],
-        testV1:{
+        constructor(props){
+        super(props);
+        this.state = { 
             
-        }
-        
 
-     } 
+        }; 
+    }
 
-
-    //  addProductToCart= () =>{
-    //     localStorage.setItem('id', location.state.id);
-    //     localStorage.setItem('value', location.state.value);
-    //     localStorage.setItem('originalPrice', location.state.originalPrice);
-    //     localStorage.setItem('discount', location.state.discount);
-    //     localStorage.setItem('src', location.state.src);
+    // constructor(props){
+    //     super(props);
+    //     this.state = { date1:new Date() }; 
     // }
-
-    //  componentDidMount(){
-    //     var a = localStorage.getItem("Test");
-    //     a.forEach(function(element){
-    //         $("p").html(element);
+    
+    // // 加入畫面加載時執行程式
+    // componentDidMount() {
+    //     // 自訂義timerID放入setInterval依照秒數執行function
+    //     this.timerID = setInterval(
+    //     // 使用箭頭函示繼承外面的tick()函示
+    //       () => this.tick(),
+    //       // 設定秒一秒跑一次
+    //       1000
+    //     );
+    //   }
+    
+    //   // 離開畫面時執行程式
+    //   componentWillUnmount() {
+    //     // 清除setInterval
+    //     clearInterval(this.timerID);
+    //   }
+    
+    //   // 給予函示更新this.setState中的data1給新的Date
+    //   tick() {
+    //     this.setState({
+    //       date1: new Date()
     //     });
-
-    // }
-
+    //   }
 
     render() { 
         return (
-            <div>
-                
-                {/* <h1>購物車測試中</h1>    */}
-                {/* {this.props.value} */}
-                {/* <button type='button' id="getButton">132123 </button> */}
-                <p></p>
-                
-                {/* {this.state.commodityValue} */}
-                {/* {console.log(this.state.commodityValue.join(";"))} */}
-                <hr/>
-                {/* {JSON.stringify(this.state.commodityValue.join(","))} */}
-                {/* {JSON.parse(this.state.commodityValue.join(","))} */}
-                {/* {console.log(typeof(JSON.stringify(this.state.commodityValue[0])))} */}
-                {/* {this.setState} */}
-                {/* {this.state.commodityValueV2.id2} */}
-                {/* {localStorage.getItem("Test")} */}
-                {/* {console.log(typeof(localStorage.getItem("Test")))} */}
-                {/* {this.state.JSONString} */}
-                <hr />
+            <>
+            {/* 將data1的日期,使用時間轉換成文字顯示 */}
+           {/* <h2>It is {this.state.date1.toLocaleTimeString()}.</h2> */}
+           <hr />
+           <div id="max1"></div>
 
-
- 
-
-
-                
-
-
-            </div>
+           <hr />
+           
+           {/* {console.log(data1)} */}
+           {/* {console.log(this.state.data2)}
+           {console.log(this.props.data2)}
+           {console.log(this.props.data)} */}
+           {console.log(this.props.test1)}
+           {console.log(this.props.data)}
+           {/* {this.state.data2} */}
+            </>
         );
     }
 }
  
 export default ShoppingCart;
-
-
-
-
-
-

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css'
 import './buyCard.css'
-import ShoppingCart from './navComponents/shoppingCart.jsx'
+import ShoppingCart from './navComponents/shoppingCart1.jsx'
 import { NavLink } from 'react-router-dom';
 import Axios from 'axios';
 

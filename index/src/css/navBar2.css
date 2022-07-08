@@ -1,0 +1,36 @@
+a {
+    color: rgb(0, 0, 0) !important;
+    text-decoration:none !important;
+    font-size: 14px;
+}
+
+a:hover {   
+    color: #96a850 !important;
+
+}
+
+.btn-outline-success {
+    background-color: #C9E265 !important;
+    border: 1px solid black !important;
+}
+
+span:hover {
+    /* width: 100px; */
+    /* background-color: aquamarine; */
+    /* color: aquamarine !important; */
+    box-shadow: 0 0 5px rgba(33, 33, 33, 0.192);
+}
+
+#text1:hover {
+    color: #7c8b41;
+}
+
+.text-center {
+    margin-top: -10px !important;
+    margin-bottom: -15px !important;
+
+}
+
+.dropdown-item {
+    background-color: #FFF !important;
+}

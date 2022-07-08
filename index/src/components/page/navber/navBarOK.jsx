@@ -1,25 +1,25 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css';
-import '../css/navBar.css';
+import '../../../css/navBar.css';
 import NavBar2 from './navBar2.jsx';
-import Logo from './logo';
+// import Logo from './logo';
 
 // 首頁+
-import home from './navComponents/home.jsx';                  
-import promotions from './navComponents/promotions.jsx'       
+import home from '../../navComponents/home';                  
+import promotions from '../../navComponents/promotions.jsx'       
 // 購物車+商品
-import allCommodity from './navComponents/allCommodity.jsx'
-import brandSort from './navComponents/brandSort.jsx'
-import tennisRacket from './navComponents/tennisRacket.jsx'
-import accessories from './navComponents/Accessories.jsx'   
+import allCommodity from '../../navComponents/allCommodity.jsx'
+import brandSort from '../../navComponents/brandSort.jsx'
+import tennisRacket from '../../navComponents/tennisRacket.jsx'
+import accessories from '../../navComponents/Accessories.jsx'   
 // 關於我
-import ContactUs from './navComponents/contactUs.jsx'
+import ContactUs from '../../navComponents/contactUs.jsx'
 
 
-import login from './navComponents/login.jsx';
-import register from './navComponents/register.jsx'
-import shoppingCart from './navComponents/shoppingCart.jsx'
+import login from '../../navComponents/login.jsx';
+import register from '../../navComponents/register.jsx'
+import shoppingCart from '../../navComponents/shoppingCart1.jsx'
 
 class NavBar extends Component {
     state = { 

@@ -1,0 +1,9 @@
+#but1:hover {
+    background-color: aqua !important;
+}
+
+.buyCardImg:hover {
+    opacity: 0.5 !important;
+    transition: all 0.5s linear;
+    
+}

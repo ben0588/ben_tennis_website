@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css'
-import './buyCard.css'
-import ShoppingCart from '../../navComponents/shoppingCart.jsx'
-import { NavLink } from 'react-router-dom';
+// import '../../../css/BuyCard'
+import ShoppingCart from '../../navComponents/shoppingCart1.jsx'
+import { NavLink} from 'react-router-dom';
 import Axios from 'axios';
+import $ from 'jquery';
 
 
 
@@ -55,6 +56,11 @@ class BuyCard extends Component {
             //     commoditySrc : this.props.src,
             // }
             id:this.props.id,
+            data1:this.props.data1,
+            test1:"teeee",
+            data5:this.props.data,
+
+
             
 
         }
@@ -64,6 +70,8 @@ class BuyCard extends Component {
         this.setState({
           flag: this.state.flag === 0 ? 1 : 0
         });
+
+       
     }
 
     // test =()=>{
@@ -84,6 +92,49 @@ class BuyCard extends Component {
         localStorage.key(this.props.date)
         localStorage.setItem(this.props.id,this.props.value);
     }
+
+    test1 = (e) =>{
+        alert("OK");
+        // console.log(data1);
+        const test1 = this.state.data1
+        console.log(this.props.data1)
+        console.log(this.props.data1[0])
+        console.log(this.state.data1[0])
+        // const max1 = document.getElementById('max1');
+        // max1.innerText = JSON.stringify((this.props.data1[0].id == 0 )? this.props.data1[0].value:"NO");
+        // max1.innerHTML = this.state.data1[0];
+        // $('#max').text(this.state.data1)
+        // $('#max').text(JSON.stringify(this.props.data1[0]))
+        const max1 = JSON.stringify(this.state.data1[0]);
+        // $('#max1').text(JSON.stringify(this.state.data1[0]))
+        $('#max1').text(test1)
+        $('#max1').val(test1)
+        $('#max1').html(test1)
+        console.log(test1)
+        // console.log(this.state.data1[0].id);
+
+    }
+
+    componentDidMount(){
+       var x =  document.getElementById('max');
+    //    x.innerText = "測試";
+    //    x.innerText = this.state.data5[0];
+       x.innerText = JSON.stringify(this.state.data5[0].value1);
+
+    }
+
+
+    cardOnClick = (e) =>{
+        // alert('OKK');
+        console.log(this.state.data5);
+        const max1 = this.state.data5
+        console.log(max1);
+        // document.getElementById('max1').innerText("??");
+        $('#max1').val("OKK");
+        
+    }
+
+    
     
 
     render() { 
@@ -97,6 +148,15 @@ class BuyCard extends Component {
                 <img className="buyCardImg "src={this.props.src}
                 style={this.state.imgStyle}/>
                 {/* 設定商品名稱 */}
+
+                {/* 測試欄位 */}
+                <div id="max" value=""></div>
+                {/* {JSON.stringify(this.state.data5[0].value1)} */}
+                {/* <input id="max" value={JSON.stringify(this.state.data5[0].value1)}></input> */}
+                {console.log(this.state.data5)}
+                {console.log(this.state.data5[0])}
+                {/* {this.state.data5} */}
+
                 <h5 style={this.state.textStyle} className="mt-3 font-weight-bolder ">{this.props.value}{this.props.id}</h5>
                 <div className='mt-3'>
                 {/* 設定商品原價 */}
@@ -111,16 +171,38 @@ class BuyCard extends Component {
                 </svg></button>
                 {/* <button className='btn btn-outline-dark shadow' onClick={this.test}><NavLink to="/shoppingCart">加入購物車</NavLink></button> */}
                 <button className='btn btn-outline-dark shadow'
-                 onClick={this.props.onClick}>
-                    {/* <NavLink to={`/shoppingCart/${this.state.id}`}>  */}
+                //  onClick={this.test1}>
+                 onClick={this.props.doClick}>
+                    {/* {console.log(this.state.data1)} */}
+                    {/* <NavLink to={`/shoppingCart`}>  */}
                     加入購物車
                     {/* </NavLink> */}
+                
                 </button>
+                
+                
 
                 </div>
                 </div>
                 </div>
             </div>
+
+            {this.state.data5.map((elm,index)=>{
+
+                return (
+                    <>
+                    <p>{elm.value1[0]}</p>
+                    <p>{elm.value1[1]}</p>
+                    <p>{elm.value1[2]}</p>
+
+                    <Link onClick={this.cardOnClick} to={`/shoppingCart`}>
+                    <div className="col-12">
+                    </div>
+                   </Link>
+
+                    </>
+                )
+            })}
             
             
             </>
