@@ -127,10 +127,15 @@ class BuyCard extends Component {
     cardOnClick = (e) =>{
         // alert('OKK');
         console.log(this.state.data5);
-        const max1 = this.state.data5
+        let max1 = this.state.data5
         console.log(max1);
+        
         // document.getElementById('max1').innerText("??");
         $('#max1').val("OKK");
+        $('#max1').text("OKK");
+        // $('#max2').text("OKK3");
+        // let max2 = document.getElementById('max2');
+        // max2.innerHTML = "OKKKKK";
         
     }
 

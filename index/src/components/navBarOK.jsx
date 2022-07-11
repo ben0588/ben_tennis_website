@@ -13,6 +13,10 @@ import allCommodity from './navComponents/allCommodity.jsx'
 import brandSort from './navComponents/brandSort.jsx'
 import tennisRacket from './navComponents/tennisRacket.jsx'
 import accessories from './navComponents/Accessories.jsx'   
+
+// 測試配件中編輯按鈕
+import accessoriesEdit from "./navComponents/accessoriesEdit.jsx"
+
 // 關於我
 import ContactUs from './navComponents/contactUs.jsx'
 
@@ -45,7 +49,12 @@ class NavBar extends Component {
                     <Route path="/allCommodity" component={allCommodity} exact/>
                     <Route path="/brandSort" component={brandSort} exact/>
                     <Route path="/tennisRacket" component={tennisRacket} exact/>
+
+
+                    {/* 配件測試中 */}
                     <Route path="/accessories" component={accessories} exact/>
+                    {/* 模擬點擊跳轉 */}
+                    <Route path="/accessories/:id" component={accessoriesEdit} exact/>
 
 
                     <Route path="/contactUs" component={ContactUs} exact />
